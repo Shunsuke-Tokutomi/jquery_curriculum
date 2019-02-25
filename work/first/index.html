@@ -96,8 +96,9 @@ $(function(){
 // 第6問  id='q6'の要素をクリックしたらこの要素を2秒かけてmargin-topとmargin-leftを100pxの位置に移動させよ。
   $('#q6').click(function(){
     $(this).animate({
-      'margin-top':'100px', 'margin-left':'100px'}, 2000
-    )
+      'margin-top':'100px',
+      'margin-left':'100px'
+    }, 2000)
   });
 // 第7問  id='q7'の子要素をクリックしたら、その要素のインデックス（何番目か）をconsole.log()とalert()を用いて表示させよ。
   $('#q7').find('li').click(function(){
