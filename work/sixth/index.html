@@ -21,6 +21,43 @@
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
+      $(function(){
+        var maxcount = 30;
+        $('.input').keyup(function(){
+          var valuelength = $(this).val().replace(/\s+/g,'').length;
+          var countdown = maxcount - valuelength;
+          $('.rest-count').html(countdown);
+          if (valuelength > 30) {
+          $('.rest-count').addClass('red');
+          } else if (valuelength <= 30) {
+          $('.rest-count').removeClass('red');
+          }
+        });
+      });
+      // $('.input').keyup(function(){
+      //   var maxcount = 30;
+      //   var valuelength= $('.input').val();
+      //   var count = $('.input').replace(/\s+/g,'').length.val();
+      //   var countdown = maxcount - count;
+      //   if (countdown > 30) {
+      //     $('.rest-count').addClass('.red');
+      //   } else if (countdown <= 30) {
+      //     $('.rest-count').removeClass('.red');
+      //   }
+      // });
+
+
+      // $('.input').keyup(function(){
+      //   var valuelength = $(this).val();
+      //   var maxcount = 30;
+      //   var count = $('rest-count').replace(/\s+/g,'').length;
+      //   var countdown = maxcount - valuelength;
+      //   if (countdown > 30) {
+      //     $('.rest-count').addClass('red');
+      //   } else if (countdown <= 30) {
+      //     $('.rest-count').removeClass('red');
+      //   }
+      // });
       // 今回やるのは文字数チェッカーです。
       // .input に文字を入力し、文字を入力した段階でその文字数に応じて .rest-count の値が減っていき、最大文字数である30文字以上入力すると .rest-count に .red クラスが追加されて文字色が赤くなり、30文字以内になると、.red クラスが外れ、文字色が元に戻る。（ちなみに改行は文字数に含まない。）
       // .keyup() 文字入力後に発火されるイベントです。
