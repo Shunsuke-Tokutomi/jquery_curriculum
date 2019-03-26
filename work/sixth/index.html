@@ -22,15 +22,15 @@
     <script src="../../common/js/jquery.js"></script>
     <script>
       $(function(){
-        var maxcount = 30;
+        var maxcount = $('.rest-count').html();
         $('.input').keyup(function(){
           var valuelength = $(this).val().replace(/\s+/g,'').length;
           var countdown = maxcount - valuelength;
           $('.rest-count').html(countdown);
-          if (valuelength > 30) {
-          $('.rest-count').addClass('red');
-          } else if (valuelength <= 30) {
-          $('.rest-count').removeClass('red');
+          if (valuelength > maxcount) {
+            $('.rest-count').addClass('red');
+          } else {
+            $('.rest-count').removeClass('red');
           }
         });
       });
